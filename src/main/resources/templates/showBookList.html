@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Show countries</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1>List of Books</h1>
+		<div class="row col-md-7 table-responsive">
+			<table id="bookTable" class="table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Title</th>
+						<th>No. of Pages</th>
+						<th>In Stock</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="book, rowStat : ${books}">
+						<td th:text="${book.id}"></td>
+						<td th:text="${book.title}"></td>
+						<td th:text="${book.pages}"></td>
+						<td th:text="${book.instock}? YES : NO"
+							th:style="${book.instock} ? 'color: green' : 'color: red;'"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
