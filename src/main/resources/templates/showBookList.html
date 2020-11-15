@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Show countries</title>
+<title>Ajax Paging Table</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
@@ -12,10 +12,106 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- <script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js"></script> -->
+<!-- <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.css" /> -->
+<!-- <script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.js"></script> -->
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"  /> -->
+
+	
+
+<script type="text/javascript" src="/js/table.js"></script>
+<style type="text/css">
+.clear {
+	clear: both;
+	margin-top: 20px;
+}
+
+input[type=text] {
+	padding: 5px;
+	width: 250px;
+	letter-spacing: 1px;
+}
+
+#searchResult {
+	list-style: none;
+	float:right;
+	width: 250px;
+	position: inherit;
+	margin: 0;
+}
+
+#searchResult li {
+	background: lavender;
+	padding-right: 0px;	
+	margin-bottom: 1px;
+}
+
+#searchResult li:nth-child(even) {
+	background: cadetblue;
+	color: white;
+}
+
+#searchResult li:hover {
+	cursor: pointer;
+}
+
+#search {
+	text-align: right;
+}
+
+
+</style>
 </head>
 
 <body>
 	<div class="container">
+		<h1>List of Books</h1>
+		<!-- <div style="text-align: right">
+			<div>
+				Search by : <input type="text" placeholder="Enter title" id="txt_search" name="txt_search">
+				<ul id="searchResult"></ul>
+			</div>
+		</div>
+		 -->
+		 <div id="search">
+		 	<span>
+		 		<input type="text" placeholder="Search by title" id="txt_search" name="txt_search">
+		 	</span>
+		 </div>
+		 <div id="search">
+		 	<ul id="searchResult"></ul>
+		 </div>
+		 
+		<div class="row">
+			<div class="col-sm-7"
+				style="background-color: #e6f9ff; margin: 10px; padding: 10px; border-radius: 5px">
+
+				<table id="bookTable" class="table table-hover table-sm">
+					<thead class="thead-dark">
+						<tr>
+							<th>Id</th>
+							<th>Title</th>
+							<th>No. of Pages</th>
+							<th>In Stock</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+
+				<ul class="pagination justify-content-center" style="margin: 20px 0">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="container">
 		<h1>List of Books</h1>
 		<div class="row col-md-7 table-responsive">
 			<table id="bookTable" class="table">
@@ -38,6 +134,6 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
+	</div> -->
 </body>
 </html>

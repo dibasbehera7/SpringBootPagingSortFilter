@@ -25,7 +25,7 @@ public class Book  implements Serializable{
 	
 	private String title;
 	
-	private String pages;
+	private Integer pages;
 	
 	private Boolean instock;
 		

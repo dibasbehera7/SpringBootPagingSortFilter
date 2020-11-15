@@ -7,7 +7,41 @@
     </head>
     <body>
         <p>
-            <a href="booklists">Show Book Lists</a>
+            <a href="/api/books">Show Book Lists</a>
+        </p>
+        <hr>
+        <h3>Filter by Similar Book Titles</h3>
+        <p>
+            <a href="/api/filterByTitle?title=Life&page=0&size=5">Filter by Title = Life to get book lists</a>
+        </p>
+        <hr>
+        <h3>TESTCASE 1</h3>
+         <p>
+            <a href="/api/pageable?page=0&size=5">Page object</a>
+        </p>
+         <p>
+            <a href="/api/pageable/list?page=0&size=5">List of Books</a>
+        </p>
+         <p>
+            <a href="/api/custom/pageable?page=0&size=5">Custom user-defined Response object</a>
+        </p>
+        <h3>TESTCASE 2</h3>
+        <p>
+            <a href="/api/pageablebytitle?title=Covid-19&page=0&size=5">Do a pagination with title=Covid-19 condition for paging</a>
+        </p>
+        <p>
+            <a href="/api/pageable/bypagegreaterthan?pages=400&page=0&size=5">Do a pagination and filtering with book whose pages > 400</a>
+        </p>
+        
+        
+        <h3>TESTCASE 3</h3>
+         <p>
+            <a href="/api/pagingandsorting?page=0&size=5">Request at URL for Paging and sorting</a>
+        </p>
+        
+        <h3>TESTCASE 4</h3>
+         <p>
+            <a href="/api/pagingfilteringandsorting?title=Google Map&pages=1059&page=0&size=5"> Request at URL for Paging and sorting with Filter</a>
         </p>
     </body>
 </html>
